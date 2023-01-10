@@ -41,7 +41,10 @@ INSTALLED_APPS = [
     'accounts',
     'store',
     'cart',
+    'crispy_forms',
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -136,3 +139,15 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'accounts.Account'
+
+from django.contrib.messages import constants as messages
+
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+}
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'pranavjadhav1207@gmail.com'
+EMAIL_HOST_PASSWORD = 'xwqcchufpgoydssr' # This is the app password created for this gmail account refer this link. https://support.google.com/accounts/answer/185833
+EMAIL_USE_TLS = True
